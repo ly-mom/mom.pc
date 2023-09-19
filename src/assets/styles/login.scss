@@ -1,0 +1,212 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    // background: url(/static/img/pic_bg.9a7cc914.png) no-repeat;
+    background: url("../login/pic_bg.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .login-header{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    right: 15px;
+    height: 75px;
+    text-align: center;
+    color: white;
+    background: url("../login/pic_bgt.png") no-repeat;
+    background-size: 100% 75px;
+  }
+  .logo-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo-title img{
+    position: relative;
+    right: 5px;
+    top: 5px;
+  }
+  .login-title{
+    letter-spacing: 5px;
+    position: relative;
+    top: -25px;
+    /* left: 160px; */
+    font-size: 18px;
+    font-family: Alibaba PuHuiTi;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px #6cb2d6;
+    /* position: absolute; */
+    /* text-align: center; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+  }
+  .title{
+    font-size: 26px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+  }
+  .sub-title{
+    font-size: 10px;
+    font-weight: 500;
+    color: #00B4FF;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  .welcome-title{
+    text-align: center;
+    font-size: 18px;
+    font-family: Alibaba PuHuiTi;
+    font-weight: 400;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    margin:15px auto;
+  }
+  .login-form {
+    border-radius: 6px;
+    background: url("../login/pic_dlk.png") no-repeat;
+    background-size: 100% 390px;
+    width: 500px;
+    padding: 40px 70px 78px;
+    position: relative;
+    top: 20px;
+   
+    .el-input {
+      height: 40;
+      input {
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+        height: 40px;
+        background-color: rgba(0,0,0,0.1);
+        border: 1px solid #6CB2D6;
+        &:focus{
+          box-shadow:1px 1px 10px #6CB2D6;
+        }
+      }
+    }
+    .input-icon {
+      height: 40px;
+      width: 20px;
+      margin-left: 7px;
+    }
+    .el-input--prefix .el-input__inner {
+      padding-left: 40px;
+    }
+  }
+  .login-tip {
+    font-size: 13px;
+    text-align: center;
+    color: #bfbfbf;
+  }
+  .login-button {
+    background: linear-gradient(0deg, #084FEF, #00B8FF);
+    border-radius: 7px;
+
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-family: Alibaba PuHuiTi;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  .remenber-password{
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  .el-login-footer {
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-family: Alibaba PuHuiTi;
+    font-weight: 300;
+    color: #FFFFFF;
+    opacity: 0.75;
+    letter-spacing: 1px;
+  }
+  @media screen and (max-width: 400px) {
+    .title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+    }
+    .welcome-title{
+      text-align: center;
+      font-size: 16px;
+      font-family: Alibaba PuHuiTi;
+      font-weight: 400;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      margin:15px auto;
+    }
+  }
+.login-other-login {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.login-Button-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-align:center;
+  color:#fff;
+  font-size: 10px;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 300;
+  color: #FFFFFF;
+  opacity: 0.75;
+}
+.login-recommend-box {
+  color:#fff;
+  font-size: 10px;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 300;
+  color: #FFFFFF;
+  opacity: 0.75;
+  letter-spacing: 1px;
+  margin:10px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .browser-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}
+
+.login-setting-box {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  margin:0px 0px 25px 0px;
+
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+
+}
+.noGetCode {
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+}

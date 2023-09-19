@@ -1,0 +1,314 @@
+.home {
+    background-color: #f4f7fb;
+    width: 100%;
+    @mixin flex-justify($justify: space-around, $direction: row, $wrap: wrap) {
+        display: flex;
+        justify-content: $justify;
+        align-content: center;
+        align-items: center;
+        flex-wrap: $wrap;
+        flex-direction: $direction;
+    }
+    @mixin ellipsis($lines) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $lines;
+        @if $lines == 1{ 
+            white-space: nowrap; // 强制文字一行显示
+        }@else {
+            display: -webkit-box;
+        }
+    }
+    .maxHeight30 {
+        max-height: 30px;
+    }
+    .radiusBox {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 24px;
+        background: #ffffff;
+        box-shadow: 2px 2px 40px rgba(225, 229, 234, 0.3);
+        border-radius: 16px;
+        .ql-editor {
+            height: 86% !important;
+        }
+        .boxTitle {
+            @include flex-justify(space-between);
+            margin-bottom: 20px;
+            a {
+                font-size: 14px;
+                line-height: 18px;
+                color: #b5b8bc;
+            }
+            .boxTitleLeft {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 26px;
+                color: #1b1c1d;
+            }
+        }
+        .functionContent {
+            @include flex-justify(space-around);
+            .functionItem {
+                @include flex-justify(center, column);
+                margin-bottom: 15px;
+                // width: 50px;
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 18px;
+                    border-radius: 43%;
+                    @include flex-justify(center);
+                }
+                .text {
+                    @include ellipsis(1);
+                    margin-top: 10px;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #1b1c1d;
+                }
+            }
+        }
+        .bigImage {
+            position: relative;
+            img {
+                display: block;
+                max-width: 100%;
+                max-height: 280px;
+                margin: 0 auto;
+                box-shadow: 4px 4px 20px rgba(41, 42, 45, 0.2);
+                border-radius: 20px;
+            }
+        }
+        .play{
+            position: absolute;
+            display: none;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            width: 60px;
+            height: 60px;
+            background: url('~@/assets/images/index/videoPlay.png') no-repeat;
+            background-size: cover;
+        }
+        &:hover {
+            .play {
+                display: block;
+            }
+        }
+        .smallImage {
+            img {
+                display: block;
+                max-width: 100%;
+                min-height: 100px;
+                margin: 0 auto;
+                box-shadow: 4px 4px 20px rgba(41, 42, 45, 0.2);
+                border-radius: 10px;
+            }
+        }
+        .introduceBox {
+            max-height: 140px;
+            .introduceDesc {
+                font-size: 12px;
+                line-height: 15px;
+                color: #9599a3;
+                @include ellipsis(4);
+            }
+            .introduceTitle {
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 18px;
+                color: #1b1c1d;
+                @include ellipsis(1);
+            }
+        }
+        .smallVideoBox {
+            width: 50%;
+            display: inline-block;
+            height: 162px;
+            height: 40%;
+        }
+    }
+    .navContent {
+        @include flex-justify(space-around);
+        .navBox {
+            @include flex-justify(center,row,nowrap);
+            border-radius: 10px;
+            padding: 10px 0px;
+            width: 30%;
+            &:hover {
+                background: #ebf7fd;
+                .navText {
+                    .navTitle {
+                        color: #0067ff;
+                    }
+                    .navDesc {
+                        color: #5a5c5e;
+                    }
+                }
+            }
+            .navIcon {
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                font-size: 10px;
+                text-align: center;
+                border-radius: 50%;
+                color: #ffffff;
+                margin-right: 10px;
+            }
+            .navText {
+                .navTitle {
+                    @include ellipsis(1);
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #1b1c1d;
+                }
+                .navDesc {
+                    // @include ellipsis(1);
+                    font-size: 10px;
+                    color: #c6c9cd;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    &:hover {
+                        color: #5a5c5e;
+                    }
+                }
+            }
+        }
+    }
+    .noticeBox {
+        @include flex-justify(space-between);
+        font-size: 14px;
+        color: #1b1c1d;
+        padding: 6px;
+        &:hover {
+            background: #ebf7fd;
+        }
+        .noticeBoxTitle {
+            width: calc(100% - 120px);
+            @include flex-justify(flex-start, nowrap);
+            line-height: 18px;
+            img {
+                vertical-align: bottom;
+            }
+            .content {
+                width: 65%;
+                margin-left: 8px;
+                @include ellipsis(1);
+            }
+        }
+        .new {
+            position: relative;
+            width: 39.5px;
+            height: 18px;
+            background: url("../assets/images/index/new.svg") no-repeat;
+            background-size: cover;
+            &::before {
+                content: "NEW";
+                color: #fff;
+                top: 0px;
+                left: 7px;
+                font-size: 12px;
+                position: absolute;
+            }
+        }
+    }
+    .scrollContent {
+        overflow: auto;
+        &.notice { 
+            height: 220px;
+        }
+        &.document { 
+            height: 270px;
+        }
+    }
+    .documentBox {
+        @include flex-justify(space-between);
+        font-size: 14px;
+        color: #1b1c1d;
+        padding: 6px;
+        &:hover {
+            background: #ebf7fd;
+            .downloadSvg path {
+                fill:#0067FF
+            }
+        }
+        .documentLeft {
+            @include flex-justify(flex-start);
+            width: 90%;
+        }
+        .documentType {
+            width: 60px;
+            text-align: center;
+            padding: 4px 0;
+            line-height: 14px;
+            color: #ffffff;
+            margin-right: 8px;
+        }
+        .documentTitle {
+            width: calc(100% - 46% - 60px);
+            @include ellipsis(1);
+        }
+        .documentDesc {
+            width: 40%;
+            @include ellipsis(1);
+            color: #c6c9cd;
+        }
+    }
+    .formAction {
+        @include flex-justify(flex-end);
+        align-items: flex-start;
+        ::v-deep .el-upload {
+            float: right;
+            margin-right: 10px;
+            &::after {
+                clear: both;
+            }
+        }
+        ::v-deep .el-upload-list {
+            margin-top: 30px;
+        }
+    }
+    @media (max-width:992px) {
+        .bottomRow .el-col {
+            margin-bottom: 20px;
+        }
+        .new {
+            display: none;
+        }
+    }
+    .boxTitleLeft {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        color: #1b1c1d;
+        margin-bottom: 20px;
+    }
+    .noticeTitle {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        color: #1b1c1d;
+        text-align: center;
+    }
+    .noticeTitle,.subTitle,.baseInfo{
+        text-align: center
+    }
+    .baseInfo{
+        margin: 10px;
+        .creatorBox{
+            padding: 20px ; 
+        }
+    }
+}

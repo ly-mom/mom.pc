@@ -1,0 +1,99 @@
+@import './variables.scss';
+.noticeMain {
+    display: flex;
+    background: '#f4f7fb';
+}
+.sectionLeft {
+    @media (max-width:992px) {
+        display: none;
+     }
+    min-height: calc(100vh - 110px);
+    // flex: 1;
+    flex: 0 0 400px;
+    .otherNoticeBox {
+        padding: 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 2px 2px 40px rgba(225, 229, 234, 0.3);
+        margin: 10px;
+    }
+    .boxTitle {
+        @include flex-justify(space-between);
+        margin-bottom: 20px;
+        a {
+            font-size: 14px;
+            line-height: 18px;
+            color: #b5b8bc;
+        }
+        .boxTitleLeft {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 26px;
+            color: #1b1c1d;
+        }
+       
+    } 
+    .noticeBox {
+        @include flex-justify(space-between);
+        font-size: 14px;
+        color: #1b1c1d;
+        padding: 10px 6px;
+        &:hover {
+            background: #ebf7fd;
+        }
+        .noticeBoxTitle {
+            width: calc(100% - 130px);
+            @include flex-justify(flex-start, nowrap);
+            line-height: 18px;
+            img {
+                vertical-align: bottom;
+            }
+            .content {
+                width: 65%;
+                margin-left: 8px;
+                // @include ellipsis(1); 
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+        }
+    }
+}
+.sectionRight {
+    min-height: calc(100vh - 110px);
+    flex: 3;
+    padding: 20px 20px 20px 30px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 2px 2px 40px rgba(225, 229, 234, 0.3);
+    margin: 10px;
+    overflow: hidden;
+    .boxTitleLeft {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        color: #1b1c1d;
+        margin-bottom: 20px;
+    }
+    .noticeTitle {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        color: #1b1c1d;
+        text-align: center;
+    }
+    .noticeTitle,.subTitle,.baseInfo{
+        text-align: center
+    }
+    .baseInfo{
+        margin: 10px;
+        .creatorBox{
+            padding: 20px ; 
+        }
+    }
+}

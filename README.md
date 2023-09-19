@@ -1,2 +1,3 @@
-# mom.pc
-lymom的PC端模板
+# Ly.Mom.Web.Template
+
+前端项目模板

@@ -1,0 +1,157 @@
+// base color
+$blue: #0067FF; //蓝色
+$lightBlue: #319CFF; //浅蓝色
+$skyBlue: #4BB2FF; //天蓝色
+$red: #F03D3D; //红色
+$pink: #FF5B82; //粉色
+$green: #00AF8D; //绿色
+$tiffany: #4ab7bd; //
+$yellow: #FFCF33; //黄色
+$grassGreen: #52C41A; //草绿色
+$orange: #FF6600; //橙色
+$magenta: #FD76C2; //洋红
+$voliet: #AF77FE ; //紫罗兰
+$lightVoliet: #D8C3FF; //浅紫色
+$gray: #a8b6bb; //灰色
+$lightBlueBlack: #5D7092; //浅蓝黑色
+$lightPink: #FFB6B6;//浅粉色
+
+// sidebar
+$menuText:#bfcbd9;
+$menuActiveText:#409EFF;
+$subMenuActiveText:#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:#081969;
+$menuHover:#263445;
+$sidebarTitle: #ffffff;
+
+$menuLightBg:#ffffff;
+$menuLightHover:#f0f1f5;
+$sidebarLightTitle: #001529;
+
+$subMenuBg:#030D46;
+$subMenuHover:#01013a;
+
+$sideBarWidth: 230px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  menuLightBg: $menuLightBg;
+  menuLightHover: $menuLightHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  sidebarTitle: $sidebarTitle;
+  sidebarLightTitle: $sidebarLightTitle;
+}
+
+@mixin tag-color-arr($color) {
+  background-color: rgba($color,.2);
+  border-color: rgba($color,.4);
+  color: rgba($color,1);
+  color: rgba($color,1);
+}
+
+@mixin colorArr($num) {
+  @if $num==0{
+    // color: $lightBlueBlack;
+    @include tag-color-arr($lightBlueBlack)
+  }@else if $num==1 {
+    // color: $blue;
+    @include tag-color-arr($blue)
+  } @else if $num==2 {
+    // color: $orange;
+    @include tag-color-arr($orange)
+  } @else if $num==3 {
+    // color: $red;
+    @include tag-color-arr($red)
+  } @else if $num==4 {
+    // color: $green;
+    @include tag-color-arr($green)
+  } @else if $num==5 {
+    // color: $lightPink;
+    @include tag-color-arr($lightPink)
+  } @else if $num==6 {
+    // color: $voliet;
+    @include tag-color-arr($voliet)
+  } @else if $num==7 {
+    // color: $yellow;
+    @include tag-color-arr($yellow)
+  } @else if $num==8 {
+    // color: $grassGreen;
+    @include tag-color-arr($grassGreen)
+  } @else if $num==9 {
+    // color: $skyBlue;
+    @include tag-color-arr($skyBlue)
+  } @else if $num==10 {
+    // color: $lightVoliet;
+    @include tag-color-arr($lightVoliet)
+  } @else if $num==11 {
+    // color: $magenta;
+    @include tag-color-arr($magenta)
+  }@else if $num==12 {
+    // color: $tiffany;
+    @include tag-color-arr($tiffany)
+  }@else {
+    // color: $gray;
+    @include tag-color-arr($gray)
+  }
+}
+
+@for $i from 0 through 14 {
+  .colorArr-#{$i}{
+    @include colorArr($i);
+  }
+}
+
+@mixin flex-justify($justify: space-around, $direction: row, $wrap: wrap, $items: center) {
+  display: flex;
+  justify-content: $justify;
+  align-content: center;
+  align-items: $items;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+@mixin ellipsis($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+// 为了避免名字和颜色关键字相同而冲突，故在颜色名后面加上s，以避免编译报错
+$colorArr: (
+  blues: #0067FF, //蓝色
+  lightBlues: #319CFF, //浅蓝色
+  skyBlues: #4BB2FF, //天蓝色
+  reds: #F03D3D, //红色
+  pinks: #FF5B82, //粉色
+  greens: #00AF8D, //绿色
+  tiffanys: #4ab7bd, //
+  yellows: #FFCF33, //黄色
+  grassGreens: #52C41A, //草绿色
+  oranges: #FF6600, //橙色
+  magentas: #FD76C2, //洋红
+  voliets: #AF77FE , //紫罗兰
+  lightVoliets: #D8C3FF, //浅紫色
+  grays: #a8b6bb, //灰色
+  lightBlueBlacks: #5D7092, //浅蓝黑色
+  lightPinks: #FFB6B6,//浅粉色
+);
+
+@each $colorName,$colorValue in $colorArr {
+  .text-#{$colorName} {
+    color: $colorValue;
+  }
+  .bg-#{$colorName} {
+    background: $colorValue;
+  }
+}

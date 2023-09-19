@@ -1,0 +1,514 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,  Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+.cur-move {
+  cursor: move;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.dragTableTitleBoder {
+  border-left: dotted #319CFF 2px;
+}
+.lightBlue-row {
+  background: #CBEBFC;
+}
+.disabled-row {
+  background: #ededed;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 10px;
+  position: relative;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+// 表格无数据的最小高度
+.el-table__empty-block {
+  min-height: 300px !important;
+}
+
+// 修复表格固定列遮住底部滚动条的问题
+.el-table--fluid-height .el-table__fixed, .el-table--fluid-height .el-table__fixed-right {
+  height: auto !important;
+  bottom: 9px !important;
+}
+
+//滚动条样式------lijinya tart
+::-webkit-scrollbar {
+  width: 9px;
+  height: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: -2px 0 0 #fff inset,
+  1px 0 0 rgba(255, 255, 255, 0.9) inset,
+  0 -1px 0 rgba(255, 255, 255, 0.9) inset,
+  0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+
+::-webkit-scrollbar-track:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -2px 0 0 #fff inset, 1px 0 0 #fff inset,
+  0 -1px 0 rgba(255, 255, 255, 0.9) inset,
+  0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+// 设置火狐浏览器的滚动条样式
+* {
+  scrollbar-color:rgba(0, 0, 0, 0.1) #fff;
+  scrollbar-width: thin;
+}
+
+//滚动条样式------end
+
+/*
+修改表单字体样式
+*/
+
+.el-form-item__label,.el-form-item--medium .el-form-item__content, .el-form-item--medium .el-form-item__label{
+  font-size: 13px !important;
+}
+//弹框title样式
+
+.verticalLineTitle {
+  display: flex;
+  align-items: center;
+  font-size: 14px !important;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 10px;
+  &:before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background-color: #1890ff;
+    border-radius: 20px;
+    margin: 1px 4px 0 0;
+  }
+}
+
+.detailTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 14px !important;
+  color: #333;
+  line-height: 48px;
+  i {
+    color: #1890ff;
+    margin-right: 10px;
+    font-size: 24px;
+    line-height: 48px;
+  }
+}
+// 淡蓝背景色
+.linghtBlueBg {
+  background: #f3f6fa;
+}
+.linghtGreyBg {
+  background: #F9F9F9;
+}
+.greyBg {
+  background: '#f4f7fb';
+}
+
+/* 修改搜索框样式*/
+.el-form-item{
+  margin-bottom: 15px !important;
+}
+.el-tree-node__content{
+  font-size: 13px;
+}
+.el-dialog__body{
+  padding:20px !important;
+  max-height: calc(88vh - 112px);
+  // 弹窗头部54px高，底部58px高，共112px，margin-top：6vh，上下留白相等共12vh
+  overflow: auto;
+}
+
+// 排除100%高度的弹窗
+.is-fullscreen .dialog__body{
+  max-height: auto !important;
+}
+// 字典样式定义 、2021.9.10 start
+.dict-item{
+  display: inline-block;
+  height: 28px;
+  padding: 0 10px;
+  line-height: 26px;
+  font-size: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+  &.primary{
+    background-color: #ecf5ff;
+    border-color: #d9ecff;
+    color: #409EFF;
+  }
+  &.success-dark{
+    background-color: #67c23a;
+    border-color: #67c23a;
+    color: #fff;
+  }
+  &.success{
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+    color: #67c23a;
+  }
+  &.warning-dark{
+    background-color: #e6a23c;
+    border-color: #e6a23c;
+    color: #fff;
+  }
+  &.warning{
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+    color: #e6a23c;
+  }
+  &.info-dark{
+    background-color: #909399;
+    border-color: #909399;
+    color: #fff;
+  }
+  &.info{
+    background-color: #f4f4f5;
+    border-color: #e9e9eb;
+    color: #909399;
+  }
+  &.danger-dark{
+    background-color: #f56c6c;
+    border-color: #f56c6c;
+    color: #fff;
+  }
+  &.danger{
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+    color: #f56c6c;
+  }
+  &.dangerDeep{
+    background-color: #FD6363;
+    border-color: #E52C2C;
+    color: #ffffff;
+  }
+  &.successDeep{
+    background-color: #5CC291;
+    border-color: #2FAE71;
+    color: #ffffff;
+  }
+  @for $i from 0 through 14 {
+    &.colorArr-#{$i}{
+      @include colorArr($i);
+    }
+  }
+}
+// 字典样式定义 、2021.9.10 end
+
+/**
+ * @description: 表单的label换行样式
+ * @param {*} 居中：center；左对齐：left；右对齐：right
+ * @return {*} form_label_break_center；form_label_break_left；form_label_break_right
+ */
+$position: center,left,right;
+@each $p in $position{
+  .form_label_break_#{$p} .el-form-item__label{
+    line-height: 15px !important;
+    text-align: $p;
+  }
+}
+
+/**
+ * @msg: 字体加粗样式
+ * @param {*} 细体：lighter; 正常：normal；加粗：bold；加加粗：bolder
+ * @return {*} text-lighter；text-normal；text-bold；text-bolder；
+ */
+$weight:  lighter,normal,bold,bolder;
+@each $w in $weight{
+  .text-#{$w} {
+    font-weight: $w;
+  }
+}
+
+// 修改迷你尺寸的表格td边距
+.el-table--mini td {
+  padding: 2px 0 !important;
+}
+// 表头高度
+.el-table--mini th {
+  padding: 2px 0 !important;
+}
+// 固定列表头和合并表头高度
+.el-table .el-table__header-wrapper th,.el-table .el-table__fixed-header-wrapper th {
+  height: 30px !important;
+}
+
+// 表单的content上下居中对齐
+.el-form-item__content .el-input-group {
+  vertical-align: middle !important;
+}
+
+// 公告详情的图片样式
+.ql-editor {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.IsDiffYes {
+  background-color: #FD6363;
+border-color: #E52C2C;
+color: #ffffff;
+  display: inline-block;
+height: 28px;
+padding: 0 10px;
+line-height: 26px;
+font-size: 12px;
+border-width: 1px;
+border-style: solid;
+border-radius: 4px;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+white-space: nowrap;
+}
+
+// element的select下拉弹窗的隐藏样式
+.popperClassNone {
+  display: none ;
+}
+
+.vxe-table--render-default.size--mini .vxe-body--column:not(.col--ellipsis) {
+  padding: 1px 0 !important;
+}
+// 设置vuxtable的tooltip层级高于弹窗遮罩层
+.vxe-table--tooltip-wrapper {
+  z-index: 2020 !important;
+}
+
+// 全屏显示表格数据的公共样式
+.table-box-fullscreen {
+  background: #fff;
+  padding: 10px;
+}
+// 页面变灰度的样式
+.global-grey{
+  filter: grayscale(.95); /* 标准写法 just for IE6-9 */ 
+  -webkit-filter: grayscale(.95); /* webkit 内核支持程度较好 */
+  -moz-filter: grayscale(.95); /* 其他内核现在并不支持，为了将来兼容性书写 */
+  -ms-filter: grayscale(.95); 
+  -o-filter: grayscale(.95);
+}
